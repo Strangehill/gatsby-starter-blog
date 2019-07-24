@@ -1,3 +1,6 @@
+# shell scripts for enhanced, opinionated, DX
+.bin
+
 # Logs
 logs
 *.log
