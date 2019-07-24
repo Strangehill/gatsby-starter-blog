@@ -1,22 +1,46 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+date: "2019-11-05"
+description: "Wherein we introduce the blog to the world"
 ---
 
-This is my first post on my new fake blog! How exciting!
+This is a placeholder for a first actual post on this new blog!
 
-I'm sure I'll write a lot more interesting things in the future.
+Here I'm introducing this blog to the world and promising to write many
+more interesting things in the future.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+This blog+site is built using Gatsby.
+The Gatsby tooling and ecosystem is great so I'm using Gatsby's starter blog
+template as a starting point for this one.
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+One big reason for using this technology is the ease with which different
+colleagues can collaborate on a community-driven site. An example of this is
+the blogging system.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+This post is composed using markdown, a friendly format that empowers even the
+least tech-savvy writer to, among other possibilities, include pictures, links
+to other pages, and tables, and to distinguish section headers, image captions,
+quotations, and code snippets from regular text --- all possible within a bare
+bones text editor through the use of sensible conventions around punctuation
+and spacing.
+
+In addition to using markdown blog posts have a section called 'front matter'
+at the top of each file, where a blog post title and date can be specified or
+even a description of the blog post that can be used as a preview when linking
+to the blog post from other pages, or used for SEO and Open Graph purposes.
+If no description is added, the system will excerpt a section from the blog
+post.
+
+The
+[source file for this post](https://raw.githubusercontent.com/Strangehill/gatsby-starter-blog/master/content/blog/hello-world/index.md)
+, the
+[Gatsby Documentation for Markdown Syntax](https://www.gatsbyjs.org/docs/mdx/markdown-syntax/)
+and this
+[overview and description of Markdown syntax](https://daringfireball.net/projects/markdown/syntax)
+from markdown developer John Gruber, are good places to learn more about
+markdown.
+
+You can also reference the whole kitchen sink of markdown syntax with examples available at this
+[Markdown guide](https://www.markdownguide.org/basic-syntax).
+
+![A random elevator's ceiling](./random-elevator-ceiling.jpg)

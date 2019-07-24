@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+    title: `a site+blog starter`,
+    producer: {
+      name: `Strangehill`,
+      summary: `who lives and works in Taiwan, building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A customized variation of the official Gatsby starter blog.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `strangehill`,
     },
   },
   plugins: [
@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `a tweaked fork of the gatsby starter blog`,
+        short_name: `a gatsby site+blog template`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#AA3377`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/noun_big_planet.svg`,
       },
     },
     `gatsby-plugin-react-helmet`,
