@@ -1,10 +1,17 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
 
+const cssVariables = {
+  brandColor: "#7acc00",
+}
+
 Wordpress2016.overrideThemeStyles = () => {
   return {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
+    },
+    a: {
+      color: cssVariables.brandColor,
     },
   }
 }
@@ -19,5 +26,6 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography
+export { cssVariables }
 export const rhythm = typography.rhythm
 export const scale = typography.scale
