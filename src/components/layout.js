@@ -1,16 +1,31 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale, cssVariables } from "../utils/typography"
 
-const H1 = styled.h1`
-  ${{ ...scale(1.5) }};
-  margin-bottom: ${rhythm(1.5)};
-  margin-top: 0;
+const { brandColor } = cssVariables
+
+const Nav = styled.nav`
+  text-align: right;
+  > * {
+    padding: 0.5rem; 0.4rem 0.25rem 0.2rem;
+    :not(:first-child) {
+      margin-left: 0.4em;
+    }
+  }
 `
 const HeaderLink = styled(Link)`
   box-shadow: none;
   color: inherit;
+  &.current-page {
+    border-bottom: 2px solid ${brandColor};
+    font-weight: bold;
+  }
+`
+const H1 = styled.h1`
+  ${{ ...scale(1.5) }};
+  margin-bottom: ${rhythm(1.5)};
+  margin-top: 0;
 `
 const H3 = styled.h3`
   font-family: Montserrat, sans-serif;
@@ -22,16 +37,6 @@ const Container = styled.div`
   max-width: ${rhythm(24)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
-const Nav = styled.nav`
-  text-align: right;
-  margin-bottom: ${rhythm(1)};
-  > * {
-    :not(:first-child) {
-      margin-left: 1em;
-    }
-  }
-`
-
 const Layout = ({ location, title, children }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
@@ -46,6 +51,17 @@ const Layout = ({ location, title, children }) => {
   `)
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  let navbar = (
+    <Nav>
+      <HeaderLink to="/about/" activeClassName="current-page">
+        About
+      </HeaderLink>
+      {` `}
+      <HeaderLink to="/blog/" activeClassName="current-page">
+        Blog
+      </HeaderLink>
+    </Nav>
+  )
 
   if (location.pathname === rootPath) {
     header = (
@@ -53,10 +69,7 @@ const Layout = ({ location, title, children }) => {
         <H1>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H1>
-        <Nav>
-          <HeaderLink to="/about/">About</HeaderLink>
-          <HeaderLink to="/blog/">Blog</HeaderLink>
-        </Nav>
+        {navbar}
       </>
     )
   } else {
@@ -65,10 +78,7 @@ const Layout = ({ location, title, children }) => {
         <H3>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H3>
-        <Nav>
-          <HeaderLink to="/about/">About</HeaderLink>
-          <HeaderLink to="/blog/">Blog</HeaderLink>
-        </Nav>
+        {navbar}
       </>
     )
   }
