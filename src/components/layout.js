@@ -38,11 +38,21 @@ const Container = styled.div`
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(24)};
+  max-width: ${rhythm(44)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
 const Main = styled.main`
   flex: 1;
+`
+const Header = styled.header`
+  @media (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    nav {
+      min-width: 10em;
+    }
+  }
 `
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -61,26 +71,26 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <>
+      <Header>
         <H1>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H1>
         {navbar}
-      </>
+      </Header>
     )
   } else {
     header = (
-      <>
+      <Header>
         <H3>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H3>
         {navbar}
-      </>
+      </Header>
     )
   }
   return (
     <Container>
-      <header>{header}</header>
+      {header}
       <Main>{children}</Main>
       <Footer />
     </Container>
