@@ -57,5 +57,4 @@ const Footer = ({ className }) => {
   )
 }
 
-
 export default Footer
