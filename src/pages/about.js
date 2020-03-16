@@ -14,9 +14,21 @@ const AboutPage = ({ location, data }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <div>
-        <H1>About</H1>
-        <p>Our brand.</p>
-        <p>Our team.</p>
+        <H1> About </H1>
+        <p> Our brand. </p>
+        <p> Our team. </p>
+        <h2> This site. </h2>
+        <p>
+          Twitter Icon made by{" "}
+          <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+            Freepik
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            {" "}
+            www.flaticon.com
+          </a>
+        </p>
         <p>
           Go {` `}
           <Link to="/">back to the homepage</Link>.
