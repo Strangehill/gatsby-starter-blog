@@ -1,6 +1,7 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import Footer from "./footer"
 import { rhythm, scale, cssVariables } from "../utils/typography"
 
 const { brandColor } = cssVariables
@@ -32,23 +33,18 @@ const H3 = styled.h3`
   margin-top: 0;
 `
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(24)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
+const Main = styled.main`
+  flex: 1;
+`
 const Layout = ({ location, title, children }) => {
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
   const rootPath = `${__PATH_PREFIX__}/`
   let header
   let navbar = (
@@ -85,16 +81,8 @@ const Layout = ({ location, title, children }) => {
   return (
     <Container>
       <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with care and attention, by
-        {` `}
-        <a
-          href={`https://twitter.com/${data.site.siteMetadata.social.twitter}`}
-        >
-          Antonio
-        </a>
-      </footer>
+      <Main>{children}</Main>
+      <Footer />
     </Container>
   )
 }
