@@ -9,12 +9,9 @@ Wordpress2016.overrideThemeStyles = () => {
     a: {
       color: "#dd3333",
     },
-    "h1": {
+    "h1,h3": {
       marginTop: "0px",
       marginBottom: "0px"
-    },
-    "h3": {
-      marginTop: "0px",
     },
   }
 }
