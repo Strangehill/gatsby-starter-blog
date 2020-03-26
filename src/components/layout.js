@@ -33,7 +33,7 @@ const Layout = ({ location, title, children }) => {
       <h3
         style={{
           fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
+          //marginTop: 0,
         }}
       >
         <Link
