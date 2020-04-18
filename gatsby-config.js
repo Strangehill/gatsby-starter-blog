@@ -93,6 +93,7 @@ module.exports = {
       options: {
         langKeyDefault: `en`,
         useLangKeyLayout: false,
+        pagesPaths: ["/content/blog/"],
         markdownRemark: {
           postPage: require.resolve("./src/templates/blog-post.js"),
           query: `
