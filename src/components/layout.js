@@ -3,6 +3,10 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Footer from "./footer"
 import { rhythm, scale, cssVariables } from "../utils/typography"
+import catalogEs from "../locales/es/messages.js"
+import catalogEn from "../locales/en/messages.js"
+import catalogZh from "../locales/zh/messages.js"
+import { I18nProvider } from "@lingui/react"
 
 const { brandColor } = cssVariables
 
@@ -54,6 +58,7 @@ const Header = styled.header`
     }
   }
 `
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -75,6 +80,7 @@ const Layout = ({ location, title, children }) => {
         <H1>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H1>
+        <p>Serving Your World</p>
         {navbar}
       </Header>
     )
@@ -84,16 +90,26 @@ const Layout = ({ location, title, children }) => {
         <H3>
           <HeaderLink to={"/"}>{title}</HeaderLink>
         </H3>
+        <p>Serving Your World</p>
         {navbar}
       </Header>
     )
   }
   return (
-    <Container>
-      {header}
-      <Main>{children}</Main>
-      <Footer />
-    </Container>
+    <I18nProvider
+      language="zh"
+      catalogs={{
+        en: catalogEn,
+        es: catalogEs,
+        zh: catalogZh
+      }}
+    >
+      <Container>
+        {header}
+        <Main>{children}</Main>
+        <Footer />
+      </Container>
+    </I18nProvider>
   )
 }
 

@@ -2,6 +2,7 @@
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 import styled from "styled-components"
+import { Trans } from "@lingui/macro"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -51,6 +52,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
             <header>
               <Title>
                 <StyledLink to={node.fields.slug}>{title}</StyledLink>
+                <p>
+                  <Trans>Hello, everyone!</Trans>
+                </p>
               </Title>
               <small>{node.frontmatter.date}</small>
             </header>
